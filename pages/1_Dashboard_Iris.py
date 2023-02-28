@@ -29,5 +29,5 @@ col1, col2 = st.columns(2)
 fig_1 = px.histogram(df[df['Species'] == species], x='SepalLengthCm')
 col1.plotly_chart(fig_1, use_container_width=True)
 
-fig_2 = px.box(df[df['Species'] == species], x='SepalLengthCm')
+fig_2 = px.box(df[df['Species'] == species], y='SepalLengthCm')
 col2.plotly_chart(fig_2, use_container_width=True)
