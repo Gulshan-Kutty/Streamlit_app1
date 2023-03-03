@@ -26,8 +26,8 @@ sex = st.selectbox("Select the category:",df["sex"].unique())
 
 col1, col2 = st.columns(2)
 
-fig_1 = px.histogram(df[df['sex'] == sex], x="Survived")
+fig_1 = px.histogram(df[df['sex'] == sex], x="survived")
 col1.plotly_chart(fig_1, use_container_width=True)
 
-fig_2 = px.box(df[df['sex'] == sex], y="Survived")
+fig_2 = px.box(df[df['sex'] == sex], y="survived")
 col2.plotly_chart(fig_2, use_container_width=True)
