@@ -1,6 +1,4 @@
 import streamlit as st
 
-st.title('Innomatics Data App')
-
-st.header('Data Science Internship')
+st.header(':blue[Welcome] to My Web Application')
 
