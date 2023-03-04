@@ -2,6 +2,7 @@ import streamlit as st
 from matplotlib import image
 import pandas as pd
 import plotly.express as px
+import seaborn as sns
 import os
 
 st.title("Dashboard - Titanic Data")
@@ -20,7 +21,6 @@ img = image.imread(IMAGE_PATH)
 st.image(img)
 
 df = pd.read_csv(DATA_PATH)
-st.dataframe(df)
 
 sex = st.selectbox("Select the category:",df["sex"].unique())
 
@@ -29,5 +29,5 @@ col1, col2 = st.columns(2)
 fig_1 = px.histogram(df[df['sex'] == sex], x="survived")
 col1.plotly_chart(fig_1, use_container_width=True)
 
-fig_2 = px.box(df[df['sex'] == sex], y="survived")
+fig_2 = px.box(df[df['sex'] == sex], y="age")
 col2.plotly_chart(fig_2, use_container_width=True)
